@@ -1,0 +1,16 @@
+let str = "Dog,Cat,How,Tears";
+let words = str.split(",");
+
+let result: { [key: number]: string[] } = {};
+
+for (let word of words) {
+    let len = word.length;
+
+    if (result[len] === undefined) {
+        result[len] = [word];
+    } else {
+        result[len].push(word);
+    }
+}
+
+console.log(result);
